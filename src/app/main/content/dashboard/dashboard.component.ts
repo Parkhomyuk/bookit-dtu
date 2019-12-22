@@ -65,23 +65,23 @@ export class DashboardComponent implements OnInit {
 
 
   cards = [
-    { id:1, title: 'Browse By Business Unit / Lab', cols: 2, rows: 1, color: '#ecf3f7', content:'tree'},
+    { id:1, title: 'Browse By Business Unit / Lab', cols: 2, rows: 1, color: '#ecf3f7', content:'tree',status:false},
 
-    {id:2,  title: 'Currently Active Usages', cols: 2, rows: 1, color: '#ecf3f7', content:'table' },
+    {id:2,  title: 'Currently Active Usages', cols: 2, rows: 1, color: '#ecf3f7', content:'table' ,status:false},
 
-    { id:3, title: 'Awaiting Requests/Steps', cols: 2, rows: 1, color: '#ecf3f7', content:'' },
+    { id:3, title: 'Awaiting Requests/Steps', cols: 2, rows: 1, color: '#ecf3f7', content:'',status:false },
 
-    { id:4, title: 'Credits And Balance', cols: 2, rows: 1, color: '#ecf3f7', content:'' },
+    { id:4, title: 'Credits And Balance', cols: 2, rows: 1, color: '#ecf3f7', content:'',status:false },
 
-    { id:5, title: 'My Upcoming Schedule', cols: 2, rows: 1, color: '#ecf3f7', content:'' },
-    { id:6, title: 'Instrument Incidents/Events', cols: 2, rows: 1, color: '#ecf3f7' , content:''},
+    { id:5, title: 'My Upcoming Schedule', cols: 2, rows: 1, color: '#ecf3f7', content:'',status:false },
+    { id:6, title: 'Instrument Incidents/Events', cols: 2, rows: 1, color: '#ecf3f7' , content:'',status:false},
 
-    { id:7, title: 'Awaiting Requests/Steps', cols: 2, rows: 1, color: '#ecf3f7', content:'' },
-    { id:8, title: 'Ongoing Requests', cols: 2, rows: 1, color: '#ecf3f7' , content:''},
-    { id:9, title: 'Request Charts', cols: 2, rows: 1, color: '#ecf3f7', content:'' },
-    { id:10, title: 'Schedule Awaiting Approval', cols: 2, rows: 1, color: '#ecf3f7', content:'' },
-    {id:11,  title: 'Awaiting Requests/Steps', cols: 2, rows: 1, color: '#ecf3f7' , content:''},
-    { id:12, title: 'Pending Service Request Projects', cols: 2, rows: 1, color: '#ecf3f7' , content:''},
+    { id:7, title: 'Awaiting Requests/Steps', cols: 2, rows: 1, color: '#ecf3f7', content:'' ,status:false},
+    { id:8, title: 'Ongoing Requests', cols: 2, rows: 1, color: '#ecf3f7' , content:'',status:false},
+    { id:9, title: 'Request Charts', cols: 2, rows: 1, color: '#ecf3f7', content:'',status:false },
+    { id:10, title: 'Schedule Awaiting Approval', cols: 2, rows: 1, color: '#ecf3f7', content:'',status:false },
+    {id:11,  title: 'Awaiting Requests/Steps', cols: 2, rows: 1, color: '#ecf3f7' , content:'',status:false},
+    { id:12, title: 'Pending Service Request Projects', cols: 2, rows: 1, color: '#ecf3f7' , content:'',status:false},
 
   ];
   item: any={id:-1};
@@ -106,6 +106,7 @@ export class DashboardComponent implements OnInit {
         if(i==0){
          this.cards[i].rows=3;
          this.cards[i].cols=6;
+         this.cards[i].status=true;
         }
         temp=this.cards[0];
         this.item=Object.assign({},this.cards[i]);
@@ -113,6 +114,7 @@ export class DashboardComponent implements OnInit {
         this.item.cols=6;
         this.cards[0]=this.item;
         this.cards[i]=temp;
+        this.cards[i].status=true;
         console.log('one')
       }
 
@@ -121,8 +123,11 @@ export class DashboardComponent implements OnInit {
   zoomIn(id: number){
     this.item={id:-1};
     for(let i=0;i<this.cards.length;i++){
+      if(this.cards[i].id==id){
+        this.cards[i].status=false;
+      }
       this.cards[i].cols=2;
-      this.cards[i].rows=2;
+      this.cards[i].rows=1;
     }
   }
 

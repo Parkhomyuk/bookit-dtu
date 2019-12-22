@@ -26,10 +26,24 @@
 
             <mat-card-content class="dashboard-card-content">
               <!--<h6>{{card.title}}</h6>-->
-              <span>{{card.title}}</span>
+
               <ng-container [ngSwitch]="card.content">
                 <ng-container *ngSwitchCase="'tree'">
-                  <app-tree></app-tree>
+
+                  <div class="item-view" *ngIf="card.status else data">
+                    <app-tree></app-tree>
+                  </div>
+
+                  <ng-template #data>
+                    <mat-card _ngcontent-eeg-c510="" class="docs-component-category-list-card mat-card" (click)="zoomOut(card.id)">
+                      <mat-card-title _ngcontent-eeg-c510="" class="mat-card-title"><mat-icon> list_alt</mat-icon></mat-card-title>
+                      <mat-card-content _ngcontent-eeg-c510="" class="docs-component-category-list-card-summary mat-card-content">
+                       <span class="content-title">{{card.title}}</span>
+                       <span class="content-indicator">14</span>
+                      </mat-card-content>
+                    </mat-card>
+                  </ng-template>
+
                 </ng-container>
                 <ng-container *ngSwitchCase="'table'">
                   <app-table></app-table>
