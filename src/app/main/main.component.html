@@ -1,0 +1,22 @@
+<div class="main-wrapper" [ngClass]="{'main-wrapper-dark': selectedTheme=='dark', 'main-wrapper':selectedTheme=='light'}">
+
+<app-header></app-header>
+<div class="container">
+  <div class="wrapper">
+    <div class="content">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" style="background-color: transparent; padding: 0.75rem 0 0 1rem;">
+          <li class="breadcrumb-item "><a href="#" style="color: orange">Home</a></li>
+          <li class="breadcrumb-item " aria-current="page">Dashboard</li>
+        </ol>
+      </nav>
+      <app-content></app-content>
+    </div>
+    <div class="sidebar">
+      <div class="sidebar-content">
+       <app-sidebar></app-sidebar>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

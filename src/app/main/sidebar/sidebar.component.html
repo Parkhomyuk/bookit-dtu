@@ -1,0 +1,33 @@
+<div class="side-content-wrap">
+  <div class="sidebar-left rtl-ps-none ps ps--active-y open" data-perfect-scrollbar=""  >
+    <ul class="navigation-left" *ngFor="let tab of currentHeades; let i=index">
+      <li class="nav-item active" data-item="dashboard">
+        <div class="nav-item">
+          <button mat-button class="button-menu"
+                  [ngClass]="tab.active ? 'button-active' : 'button-noactive'" (click)="clickTab(tab)">
+            <mat-icon>{{tab.icon}}</mat-icon>
+            <span class="nav-text">{{tab.name | uppercase}}</span>
+          </button>
+        </div>
+        <div class="triangle" *ngIf="tab.active==true">
+          <!-- Submenu Dashboards -->
+          <ul class="list-group" *ngFor="let subtab of tab.children; let i=index">
+
+
+            <li class=" submenu">
+              <div class="empty">
+                <div class="empty-top"></div>
+                <div class="empty-bottom"></div>
+              </div>
+             <div class="submenu-title">
+               {{subtab}}
+             </div>
+
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+

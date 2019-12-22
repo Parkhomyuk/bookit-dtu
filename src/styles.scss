@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+html{ height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  button:focus { outline: none; }
+}
+::-webkit-scrollbar { /* chrome based */
+  width: 0px;  /* ширина scrollbar'a */
+  background: transparent;  /* опционально */
+}
+.rtl {
+  @import "./assets/themes/light.scss";
+}
+
+.ltr {
+  @import "./assets/themes/dark.scss";
+}

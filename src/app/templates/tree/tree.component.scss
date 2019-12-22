@@ -1,0 +1,13 @@
+@import "../../../assets/variables/variables";
+.wrapper{
+  background-color: $main-back-color;
+  max-height: 95%;
+  overflow: scroll;
+  .mat-tree{
+    background-color: $lightGrey-app-color;
+    .mat-tree-node{
+      color: $dark-app-color;
+    }
+
+  }
+}

@@ -1,0 +1,73 @@
+<div class="main-content">
+
+
+  <div class="grid-container" style="height: 100vh; overflow: auto;">
+    <mat-grid-list cols="6" rowHeight="1:1" gutterSize="5px">
+      <mat-grid-tile *ngFor="let card of cards; let i = index;"
+                     [colspan]="card.cols" [rowspan]="card.rows">
+        <cdk-drop-list [cdkDropListConnectedTo]="drops" [cdkDropListData]="i" >
+          <mat-card cdkDrag (cdkDragEntered)="entered($event)" [cdkDragData]="i"
+                    class="dashboard-card"  [style.backgroundColor]="card.color" style="padding-bottom: 50px">
+            <div class="card-manage">
+              <i class="material-icons" (click)="zoomOut(card.id)" cdkDragHandle>  drag_handle </i>
+
+              <div class="manage-right">
+                <i class="material-icons" (click)="zoomOut(card.id)">  web_asset </i>
+                <i class="material-icons"   >  settings_overscan </i>
+                <i class="material-icons" (click)="zoomIn(card.id)" *ngIf="item.id==card.id">  replay </i>
+                <i class="material-icons"  (click)="close(card.id)">  close </i>
+
+
+              </div>
+            </div>
+
+
+
+
+            <mat-card-content class="dashboard-card-content">
+              <!--<h6>{{card.title}}</h6>-->
+              <span>{{card.title}}</span>
+              <ng-container [ngSwitch]="card.content">
+                <ng-container *ngSwitchCase="'tree'">
+                  <app-tree></app-tree>
+                </ng-container>
+                <ng-container *ngSwitchCase="'table'">
+                  <app-table></app-table>
+                </ng-container>
+                <div *ngSwitchDefault>
+                  NO DATA
+                </div>
+              </ng-container>
+
+            </mat-card-content>
+
+          </mat-card>
+        </cdk-drop-list>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+
+</div>
+
+<!--<div id="dashboardModal" class="modal fade show" tabindex="-1" role="dialog" aria-labelledby="exampleModalLiveLabel"   aria-hidden="true">-->
+  <!--<mat-card class="example-card">-->
+    <!--<mat-card-header>-->
+      <!--<div mat-card-avatar class="example-header-image"></div>-->
+      <!--<mat-card-title>Shiba Inu</mat-card-title>-->
+      <!--<mat-card-subtitle>Dog Breed</mat-card-subtitle>-->
+    <!--</mat-card-header>-->
+
+    <!--<mat-card-content>-->
+      <!--<p>-->
+        <!--The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.-->
+        <!--A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally-->
+        <!--bred for hunting.-->
+      <!--</p>-->
+    <!--</mat-card-content>-->
+    <!--<mat-card-actions>-->
+      <!--<button mat-button>LIKE</button>-->
+      <!--<button mat-button>SHARE</button>-->
+    <!--</mat-card-actions>-->
+  <!--</mat-card>-->
+<!--</div>-->

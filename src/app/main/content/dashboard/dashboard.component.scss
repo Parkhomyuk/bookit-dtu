@@ -1,0 +1,84 @@
+@import "../../../../assets/variables/variables";
+.grid-container {
+  margin: 0px;
+  padding-bottom: 17vh;
+
+}
+.dashboard-card:hover {
+  -webkit-box-shadow: -1px 1px 7px 0px rgba(111, 111, 111, 0.75);
+  -moz-box-shadow: -1px 1px 7px 0px rgba(111, 111, 111, 0.75);
+  box-shadow: -1px 1px 7px 0px rgba(111, 111, 111, 0.75);
+}
+.dashboard-card {
+  position: absolute;
+  top: 0px;
+  left: 2.5%;
+  right: 2.5%;
+  bottom: 0px;
+  width: 95%;
+  height: 95%;
+  color: inherit;
+
+
+  .card-manage{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .manage-right{
+      width: 10%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+    .material-icons, .more-button{
+      cursor: pointer;
+    }
+  }
+
+}
+
+.more-button {
+  float: right;
+  font-size: 2em;
+}
+
+.dashboard-card-content {
+  text-align: center;
+  overflow: auto;
+  height: 100%;
+}
+
+.cdk-drop-list {
+  height: 100%;
+  width: 100%;
+}
+
+
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  opacity: 0.5;
+}
+
+.cdk-drag-animating {
+  transition: unset;
+}
+
+.cdk-drag-placeholder {
+  display: none;
+}
+#dashboardModal{
+  display: block;
+  position: absolute;
+  z-index: 1000;
+  top:80px;
+  left: -13vw;
+  height: 100vh;
+
+  .mat-card{
+    background-color: $main-back-color;
+
+  }
+
+}

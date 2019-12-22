@@ -1,0 +1,116 @@
+@import '../../../assets/variables/variables';
+
+.side-content-wrap{
+  width: 100%;
+  height: 100%;
+  .sidebar-left{
+    .navigation-left{
+      list-style-type: none;
+
+      padding: 0;
+      .nav-item{
+
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+
+        .button-menu{
+          width: 100%;
+          cursor: pointer;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          justify-content: flex-start;
+          .nav-text{
+
+            margin-left: $defaul-font-size;
+          }
+
+        }
+        .button-noactive{
+          color: inherit;
+        }
+        .button-noactive:hover{
+          color: $active-color;
+
+        }
+        .button-active{
+          background-color: $active-color;
+          border-bottom-right-radius: 50px;
+          border-top-right-radius: 50px;
+          color: $regular-color;
+        }
+        .triangle{
+          margin-left: $defaul-font-size*1.6;
+          cursor: pointer;
+          .list-group:last-child{
+            .submenu{
+              .empty{
+                .empty-bottom{
+                  border-left: 0px dashed $active-color;
+                  height: $defaul-font-size*1.5;
+                  width: 100%;
+                }
+              }
+            }
+
+          }
+          .list-group:hover{
+            .submenu{
+              .submenu-title{
+                color: $active-color;
+                border-bottom-right-radius: 50px;
+                border-top-right-radius: 50px;
+                height: 100%;
+              }
+            }
+
+          }
+          .list-group{
+
+            .submenu{
+              font-size: $defaul-font-size*0.85;
+              width: 100%;
+              height: $defaul-font-size*3;
+              background-color: transparent;
+              border-radius: 0;
+              border: 0px;
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-start;
+              align-items: center;
+
+              .empty{
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                width: 10%;
+                .empty-top,.empty-bottom{
+                  border-left: 1px dashed $active-color;
+                  height: $defaul-font-size*1.5;
+                  width: 100%;
+                }
+                .empty-top{
+                  border-bottom: 1px dashed $active-color;
+                }
+              }
+              .submenu-title{
+                width: 90%;
+                padding-left: $defaul-font-size/2;
+                height: 20%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
