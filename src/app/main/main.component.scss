@@ -41,6 +41,19 @@
     height: 100vh;
     overflow: hidden;
     .content {
+      .content-manage{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 1vw 0 0;
+        .settings{
+          height: inherit;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
 
       width: 87vw;
       min-height: 110vh;
